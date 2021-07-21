@@ -1,18 +1,13 @@
 def sum_to(n)
-  if n < 1
-    return nil 
-  end 
-  if n == 1 
-    return n 
-  end 
-  return n + sum_to(n-1)
-end
+  return nil if n < 1 
+  return 1 if n == 1
+  n + sum_to(n - 1)
+end 
 
-def add_numbers(arr)
-  if arr.length <= 1
-    return arr[0]
-  end
-  return arr.pop + add_numbers(arr)
+def add_numbers(nums_array)
+  return nil if nums_array.length == 0
+  return nums_array[0] if nums_array.length == 1
+  nums_array[0] + add_numbers(nums_array[1..-1])
 end
 
 def gamma_fnc(num)
